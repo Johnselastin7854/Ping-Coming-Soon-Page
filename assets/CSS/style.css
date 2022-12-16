@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+:root{
+    --Blue: hsl(223, 87%, 63%);
+    --Pale-Blue: hsl(223, 100%, 88%);
+    --Light-Red: hsl(354, 100%, 66%);
+    --Gray: hsl(0, 0%, 59%);
+    --Very-Dark-Blue: hsl(209, 33%, 12%);
+    --grren:#14a44d;
+    --white:#fff;
+    --f-body: 'Libre Franklin', sans-serif;
+
+    /* Font Weight */
+    --fw-normal:300;
+    --fw-medium:600;
+    --fw-bold:800;
+}
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: var(--f-body);
+    font-size: 2rem;
+    background-color: var(--white);
+    letter-spacing: 0.1rem;
+}
+a{
+    color: currentColor;
+    cursor: pointer;
+}
+ul{
+    list-style: none;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+.container{
+    max-width:130rem;
+    margin: 0 auto;
+    padding: 0 4rem;
+}
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Header */
+.header-wrapper{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10rem;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+.header__logo{
+   align-self: center;
+    width: 60px;
+}
+.header__form--title{
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--Gray);
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+.header__form--title b{
+    color: var(--Very-Dark-Blue);
+}
+.header__form--message{
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--Very-Dark-Blue);
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+.form-control {
+    margin-top: 2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+	/* padding-bottom: 2rem;  */
+}
+.form-control input{
+    display: block;
+    font-family: inherit;
+    outline:none;
+    border: 1px solid var(--Pale-Blue);
+    padding: 1rem 3rem;
+    border-radius: 2rem;
+}
+::placeholder{
+    color: var(--Gray);
+    font-weight: var(--fw-normal);
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+small{
+    position: absolute;
+    color: var(--Light-Red);
+    bottom: 0;
+    left: 0;;
+    font-size: 1rem;
+    font-weight: var(--fw-normal);
+    visibility: hidden;
+}
+button{
+    display: block;
+    width: 100%;
+    outline:none;
+    border: 2px solid var(--Blue);
+    padding: 1rem;
+    text-align: center;
+    color: var(--white);
+    background-color: var(--Blue);
+    border-radius: 2rem;
+    transition: opacity 0.3s ease-in-out;
+    font-size: 1.3rem;
+    font-family: inherit;
+    font-weight: var(--fw-medium);
+    cursor: pointer;
+}
+
+button:hover{
+    opacity:0.6;
+}
+.form-control input:focus {
+	outline: 0;
+	border-color: #777;
+}
+.form-control.success input{
+    border-color:var(--grren)
+}
+.form-control.error input{
+    border-color: var(--Light-Red);
+}
+.form-control.error small{
+    visibility: visible;
+}
+.form-control.error{
+    padding-bottom: 2rem;
+}
+
+/* Main */
+.slock__container{
+    margin-top: 10rem;
+   
+}
+
+/* Footer */
+
+.footer__container{
+    margin-top: 10rem;
+    padding-bottom: 5rem;
+}
+.footer__social ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+.footer__social ul li {
+    color:var(--Blue);
+    font-size: 2rem;
+    height: 4rem;
+    width: 4rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border:1px solid var(--Gray);
+   border-radius: 50%;
+   background:transparent;
+   cursor: pointer;
+   transition: all 0.3s ease-in-out;
+}
+.footer__social ul li:hover{
+    background-color:var(--Blue);
+    color: var(--white);
+    border-color: var(--Blue);
+}
+.footer-copy{
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--Gray);
+}
+
+/* Media Queries */
+@media (min-width:36em){
+    .header__logo{
+        width: 75px;
+    }
+    .header__form--title{
+        font-size: 3rem;
+    }
+    .header__form--message{
+        font-size: 1.3rem;
+    }
+    .slock__img {
+        max-width: 700px;
+		margin: 0 auto;
+    }
+    .form-container{
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        max-width: 70%;
+        width:100%;
+    }
+    .form-control{
+        flex-grow: 1;
+    }
+    button{
+        margin: 0;
+		width: 30%;
+		margin-left: 20px;
+    }
+}
+
+@media (min-width:62em){
+    .header__logo{
+        width: 100px;
+    }
+    .header__form--title{
+        font-size: 3.5rem;
+    }
+    .header__form--message{
+        font-size: 1.5rem;
+    }
+}
